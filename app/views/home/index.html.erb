@@ -22,7 +22,17 @@
   </div>
   <div class="container row justify-content-center p-4">
     <div>
-      form
+      <%= form_with model: @booking do |f| %>
+        <%= f.label :pick_up %>
+        <%= f.text_field :pick_up %>
+        <%= f.label :drop_off %>
+        <%= f.text_field :drop_off %>
+        <%= f.label :booking_date %>
+        <%= f.date_field :booking_date %>
+        <%= f.label :booking_time %>
+        <%= f.time_field :booking_time %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 </div>
