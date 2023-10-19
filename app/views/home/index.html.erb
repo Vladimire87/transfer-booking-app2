@@ -8,31 +8,54 @@
       </div>
     </nav>
   </header>
-  <div class="container row text-center justify-content-center">
+  <div class="row text-center justify-content-center">
     <div class="col-lg-8 col-10 p-2">
       <h1>
         Private Taxi and Airport transfers in Moscow and Saint-Petersburg, Russia.
       </h1>
     </div>
   </div>
-  <div class=" container row justify-content-center">
+  <div class=" row justify-content-center">
     <div class="col-lg-4 col-10 p-2">Private, safe and reliable Airport transfers in Moscow and St. Petersburg. Book taxi from or to Domodedovo (DME), Sheremetyevo (SVO), Vnukovo (VKO) and Pulkovo (LED)</div>
     <div class="col-lg-4 col-10 p-2 ">Experienced English-Speaking drivers will meet you at arrival hall, immediately after customs at the airports of Moscow and St. Petersburg with "Name Sign"</div>
     <div class="col-lg-4 col-10 p-2">You can book Standard sedan, Business Sedan, Luxury Sedan, Minivan or Minibus. Vehicles don't have any taxi signs, are in best condition and fully insured</div>
   </div>
-  <div class="container row justify-content-center p-4">
-    <div>
-      <%= form_with model: @booking do |f| %>
-        <%= f.label :pick_up %>
-        <%= f.text_field :pick_up %>
-        <%= f.label :drop_off %>
-        <%= f.text_field :drop_off %>
-        <%= f.label :booking_date %>
-        <%= f.date_field :booking_date %>
-        <%= f.label :booking_time %>
-        <%= f.time_field :booking_time %>
-        <%= f.submit %>
-      <% end %>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/errors', object: @booking %>
     </div>
   </div>
+  <%= form_with model: @booking do |f| %>
+    <div class="row">
+      <div class="col-sm-6 mb-2">
+        <h5>
+          <%= f.label :pick_up, "Pickup Location", class: "col-form-label" %>
+        </h5>
+        <%= f.text_field :pick_up, class: "form-control" %>
+        <div class="row">
+          <div class="col-sm-6 mb-2">
+            <h5>
+              <%= f.label :booking_date, "Date", class: "col-form-label" %>
+            </h5>
+            <%= f.date_field :booking_date, class: "form-control" %>
+          </div>
+          <div class="col-sm-6 mb-2">
+            <h5>
+              <%= f.label :booking_time, "Time", class: "col-form-label" %>
+            </h5>
+            <%= f.time_field :booking_time, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 mb-2">
+        <h5>
+          <%= f.label :drop_off, "Dropoff Location", class: "col-form-label" %>
+        </h5>
+        <%= f.text_field :drop_off , class: "form-control" %>
+      </div>
+      <div class="d-flex justify-content-end">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,2 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.field-with-errors input {
+  border: 1px solid red;
+}
