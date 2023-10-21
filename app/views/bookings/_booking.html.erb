@@ -1,0 +1,7 @@
+<tr>
+  <th scope="row"><%= booking.id %></th>
+  <td><%= booking.booking_date.to_formatted_s(:long) %></td>
+  <td><%= booking.booking_time.strftime("%H:%M") %></td>
+  <td><%= booking.pick_up %></td>
+  <td><%= booking.drop_off %></td>
+</tr>

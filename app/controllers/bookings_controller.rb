@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def create
     @booking = Booking.new bookings_params
+    @bookings = Booking.all
 
     if @booking.save
       flash[:success] = 'Booking created'

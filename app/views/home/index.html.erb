@@ -58,4 +58,22 @@
       </div>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Pickup</th>
+            <th scope="col">Dropoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @bookings %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
